@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <vue-header />
+    <vueHeader :showShop="toOpenShop" @closeShop="closeShop()" />
+    <router-view @openShop="openShop()" />
   </div>
 </template>
 
@@ -11,11 +12,26 @@ export default {
   name: 'App',
   components: {
     vueHeader
+  },
+
+  data() {
+    return {
+      toOpenShop: false
+    }
+  },
+  methods: {
+    openShop() {
+      console.log('toOpenShop: ',this.toOpenShop)
+      this.toOpenShop = true
+    },
+    closeShop() {
+      this.toOpenShop = false
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 body {
   padding: 0;
   margin: 0;
@@ -28,6 +44,11 @@ body {
   color: white;
   background: #2c3e50;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+}
+a {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 </style>

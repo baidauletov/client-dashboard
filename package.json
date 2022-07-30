@@ -12,7 +12,9 @@
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.8.3",
     "vue": "^2.7.8",
-    "vue-agile": "^2.0.0"
+    "vue-agile": "^2.0.0",
+    "vuesax": "^3.12.2",
+    "vue-cookie": "^1.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -24,7 +26,10 @@
     "eslint-plugin-vue": "^8.0.3",
     "node-sass": "^7.0.1",
     "sass-loader": "^13.0.2",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vue-router": "^3.0.6",
+    "vue-i18n": "^8.11.2",
+    "vuex": "^3.1.1"
   },
   "eslintConfig": {
     "root": true,
