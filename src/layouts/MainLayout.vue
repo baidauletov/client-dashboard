@@ -32,8 +32,9 @@ export default {
 .main-layout {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
   .main-layout__router {
-    width: 80vw;
+    width: 83vw;
   }
 }
 </style>

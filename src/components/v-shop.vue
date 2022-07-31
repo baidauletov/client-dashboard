@@ -181,6 +181,8 @@ export default {
     }
     .shop__list-wrapper {
         .shop__list {
+            overflow-y: scroll;
+            max-height: 50rem;
             box-sizing: border-box;
             position: relative;
             .shop__item {

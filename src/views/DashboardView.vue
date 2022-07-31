@@ -44,6 +44,11 @@
                     </div>
                 </div>
                 <div>
+                    <vs-row class="apps__list">
+                        <vs-col v-for="(item, index) in appsCards" :key="index" vs-w="4" class="apps__list-item">
+                            <gameCard  :product="item"/>
+                        </vs-col>
+                    </vs-row>
                 </div>
             </section>
         </vs-col>
@@ -52,12 +57,19 @@
                 <div class="content-wrapper">
                     <div class="content" @click="openShop">
                         <span class="content__title">
-                                Магазин
-                            </span>
+                            Магазин
+                        </span>
                         <iconArrowRight class="arrow-icon" />
                     </div>
                 </div>
-                <div>
+                <div class="shop-content">
+                    <vs-row>
+                        <vs-col v-for="(item, index) in 4" :key="index" vs-w="6" class="shop-content__item">
+                            <div @click="openShop">
+                                <shopCard />
+                            </div>
+                        </vs-col>
+                    </vs-row>   
                 </div>
             </section>
         </vs-col>
@@ -68,7 +80,10 @@
 <script>
 import iconArrowLeft from '@/components/icons/iconArrowLeft.vue'
 import iconArrowRight from '@/components/icons/iconArrowRight.vue'
+import shopCard from './../components/shop-card.vue'
+import gameCard from './../components/game-card.vue'
 import newsImage from './../../public/default-news.jpg'
+import defaultImage from './../../public/default-app.png'
 import { VueAgile } from 'vue-agile'
 
 export default {
@@ -77,7 +92,9 @@ export default {
     components: {
         VueAgile,
         iconArrowLeft,
-        iconArrowRight
+        iconArrowRight,
+        shopCard,
+        gameCard
     },
 
     data() {
@@ -104,6 +121,57 @@ export default {
                     },
                 ]
             },
+            appsCards: [
+                {
+                    title: 'app1',
+                    image: defaultImage,
+                    checked: true
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                },
+                {
+                    title: 'app1',
+                    image: defaultImage
+                }
+            ],
             news: [
                 {
                     image: '',
@@ -152,6 +220,8 @@ export default {
 <style lang="scss">
 .dashboard-view {
     padding: 0.25rem 5rem;
+    overflow-y: scroll;
+    max-height: 52rem;
     .dashboard-view__item-wrapper {
         padding: 1rem;
         .dashboard-view__item {
@@ -192,6 +262,14 @@ export default {
                     }
                 }
             }
+        }
+    }
+    .apps__list {
+        overflow-y: scroll;
+        max-height: 25rem;
+        .apps__list-item {
+            padding: 0.5rem;
+            height: 15rem;
         }
     }
     .agile__list {
@@ -242,6 +320,12 @@ export default {
         width: 3rem;
         height: 1.25rem;
         fill: white;
+    }
+    .shop-content {
+        .shop-content__item {
+            cursor: pointer;
+            padding: 0.5rem;
+        }
     }
 }
 </style>

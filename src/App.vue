@@ -35,6 +35,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
+  overflow-y: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -46,9 +47,27 @@ body {
   width: 100%;
   height: 100%;
   min-height: 100vh;
+  overflow-y: hidden;
 }
 a {
   text-decoration: none !important;
   color: inherit !important;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
 }
 </style>

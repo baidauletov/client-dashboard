@@ -22,7 +22,7 @@
             <div class="content">
                 <vs-row>
                     <vs-col v-for="(item, index) in appsCards" :key="index" vs-w="2" class="content__card-wrapper">
-                        <div class="content__card">
+                        <!-- <div class="content__card">
                             <img :src="item.image" alt="" class="content__card-image">
                             <div class="content__card-action">
                                 <h3>{{ item.title }}</h3>
@@ -31,7 +31,8 @@
                                     <iconArrowRight class="content__card-arrow" />
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        <game-card :product="item" />
                     </vs-col>
                 </vs-row>
             </div>
@@ -40,8 +41,9 @@
 </template>
 
 <script>
+import gameCard from './../components/game-card.vue'
 import iconArrowRight from './../components/icons/iconArrowRight.vue'
-import iconStar from './../components/icons/iconStar.vue'
+// import iconStar from './../components/icons/iconStar.vue'
 import defaultImage from './../../public/default-app.png'
 
 export default {
@@ -49,7 +51,8 @@ export default {
 
     components: {
         iconArrowRight,
-        iconStar
+        // iconStar,
+        gameCard
     },
 
     data() {
