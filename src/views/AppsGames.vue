@@ -22,16 +22,6 @@
             <div class="content">
                 <vs-row>
                     <vs-col v-for="(item, index) in appsCards" :key="index" vs-w="2" class="content__card-wrapper">
-                        <!-- <div class="content__card">
-                            <img :src="item.image" alt="" class="content__card-image">
-                            <div class="content__card-action">
-                                <h3>{{ item.title }}</h3>
-                                <div class="content__card-action-icons">
-                                    <iconStar class="content__card-star" :class="{'content__card-star_active' : item.checked }"  />
-                                    <iconArrowRight class="content__card-arrow" />
-                                </div>
-                            </div>
-                        </div> -->
                         <game-card :product="item" />
                     </vs-col>
                 </vs-row>
@@ -104,47 +94,47 @@ export default {
                     checked: true
                 },
                 {
-                    title: 'app1',
+                    title: 'app2',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app3',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app4',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app5',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app6',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app7',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app8',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app9',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app10',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app11',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app12',
                     image: defaultImage
                 }
             ]
@@ -196,6 +186,7 @@ export default {
     }
     .apps-main {
         width: 100%;
+        padding-right: 12%;
         .apps-main__title {
             font-weight: 600;
             text-align: left;

@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <vs-row class="apps__list">
-                        <vs-col v-for="(item, index) in appsCards" :key="index" vs-w="4" class="apps__list-item">
+                        <vs-col v-for="(item, index) in appsCards" :key="index" vs-w="3" class="apps__list-item">
                             <gameCard  :product="item"/>
                         </vs-col>
                     </vs-row>
@@ -128,47 +128,47 @@ export default {
                     checked: true
                 },
                 {
-                    title: 'app1',
+                    title: 'app2',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app3',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app4',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app5',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app6',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app7',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app8',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app9',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app10',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app11',
                     image: defaultImage
                 },
                 {
-                    title: 'app1',
+                    title: 'app12',
                     image: defaultImage
                 }
             ],

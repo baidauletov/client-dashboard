@@ -19,12 +19,13 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
+import DashboardView from '@/views/DashboardView.vue'
 
 Vue.use(Router)
 
 const router = new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
+    // mode: 'history',
+    // base: process.env.BASE_URL,
     scrollBehavior: function(to) {
         if (to.hash) {
             return {selector: to.hash, behavior:'smooth'}
@@ -33,13 +34,13 @@ const router = new Router({
         }
     },
     routes: [
-        {
+        // {
             // =============================================================================
             // MAIN LAYOUT ROUTES
             // =============================================================================
-            path: '',
-            component: () => import('./layouts/MainLayout.vue'),
-            children: [
+            // path: '',
+            // component: () => import('./layouts/MainLayout.vue'),
+            // children: [
                 // =============================================================================
                 // Theme Routes
                 // =============================================================================
@@ -47,65 +48,71 @@ const router = new Router({
                 {
                     path: '/',
                     name: 'dashboard-view',
-                    component: () => import('./views/DashboardView.vue'),
-                    meta: {
-                        rule: 'editor',
-                    }
+                    component: DashboardView,
                 },
 
                 {
                     path: '/apps',
                     name: 'AppsGames',
                     component: () => import('./views/AppsGames.vue'),
-                    meta: {
-                        rule: 'editor',
-                    }
                 },
                 {
                     path: '/login-edit',
                     name: 'LoginEdit',
                     component: () => import('./views/LoginEdit.vue'),
-                    meta: {
-                        rule: 'editor',
-                    }
                 },
                 {
                     path: '/files',
                     name: 'Files',
                     component: () => import('./views/FilesView.vue'),
-                    meta: {
-                        rule: 'editor',
-                    }
                 },
                 {
                     path: '/404',
                     name: 'ErrorPage',
                     component: () => import('./views/page-404.vue'),
-                    meta: {
-                        rule: 'editor',
-                    }
                 },
 
                 // =============================================================================
                 // Application Routes
                 // =============================================================================
 
-            ],
-        },
-        {
-            path: '*',
-            redirect: '/views/page-404'
-        }
+            // ],
+        // },
+        // {
+        //     path: '*',
+        //     redirect: '/views/page-404'
+        // }
     ],
 })
 
-// router.afterEach(() => {
-//     // Remove initial loading
-//     const appLoading = document.getElementById('loading-bg')
-//     if (appLoading) {
-//         appLoading.style.display = "none";
-//     }
+export default router
+
+
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
+// import HomeView from '../views/HomeView.vue'
+
+// Vue.use(VueRouter)
+
+// const routes = [
+//   {
+//     path: '/',
+//     name: 'home',
+//     component: HomeView
+//   },
+//   {
+//     path: '/about',
+//     name: 'about',
+//     // route level code-splitting
+//     // this generates a separate chunk (about.[hash].js) for this route
+//     // which is lazy-loaded when the route is visited.
+//     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+//   }
+// ]
+
+// const router = new VueRouter({
+//   routes
 // })
 
+// export default router
 
-export default router

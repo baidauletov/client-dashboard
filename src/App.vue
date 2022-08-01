@@ -1,16 +1,23 @@
 <template>
   <div id="app">
     <vueHeader :showShop="toOpenShop" @closeShop="closeShop()" />
-    <router-view @openShop="openShop()" />
+    <div class="main-layout">
+      <transition  mode="out-in" >
+        <router-view @openShop="openShop()" class="main-layout__router"/>
+      </transition>
+      <vueSidebar />
+    </div>
   </div>
 </template>
 
 <script>
 import vueHeader from './components/vue-header.vue'
+import vueSidebar from './components/vue-sidebar.vue'
 
 export default {
   name: 'App',
   components: {
+    vueSidebar,
     vueHeader
   },
 
@@ -36,6 +43,14 @@ body {
   padding: 0;
   margin: 0;
   overflow-y: hidden;
+}
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  .main-layout__router {
+    width: 83vw;
+  }
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

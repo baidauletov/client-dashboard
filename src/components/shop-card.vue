@@ -56,6 +56,8 @@ export default {
     .shop-card__product-title {
         display: inline-block;
         padding: 0 0 0.5rem;
+        width: 100%;
+        text-align: left;
     }
     .shop-card__image-wrapper {
         width: 100%;
@@ -72,10 +74,11 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: flex-start;
         padding: 0 1rem;
         .shop-card__description {
             color: #868686;
-        }
+            text-align: left;        }
     }
 }
 </style>
