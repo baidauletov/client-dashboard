@@ -19,13 +19,27 @@
             </vs-col>
             <vs-col vs-w="3" vs-sm="6" class="check-content">
                 <div class="check-content__top">
+                    <span class="check-content__top-title">
+                        Корзина
+                    </span>
                     <span class="check-content__top-button">
-                        Удалить
+                        Удалить все
                     </span>
                 </div>
+                <div class="check-content__main">
+                    Корзина пока пуста
+                </div>
                 <div class="check-content__bottom">
-                    <p>Комментарии</p>
-                    <input class="check-content__bottom-input" type="text">
+                    <div class="check-content__bottom-first">
+                        <span class="check-content__bottom-first-title">Итого за заказ</span>
+                        <span class="check-content__bottom-first-data">{{ shopSum }} KZT</span>
+                    </div>
+                    <input class="check-content__bottom-input" placeholder="Комментарии" type="text">
+                    <div class="check-content__bottom-second">
+                        <span class="check-content__button">Подогреть</span>
+                        <span class="check-content__button">Оплата картой</span>
+                        <span class="check-content__button">Оплата наличеыми</span>
+                    </div>
                 </div>
             </vs-col>
         </vs-row>  
@@ -87,7 +101,8 @@ export default {
                     title: 'баланс',
                     type: 'all'
                 },
-            ]
+            ],
+            shopSum: '0.00'
         }
     }
 }
@@ -140,8 +155,8 @@ export default {
         }
     }
     .check-content {
-        background: rgb(87, 87, 87);
-        border-radius: 0.25rem;
+        background: #363636;
+        border-radius: 0.125rem;
         height: 90%;
         min-height: 45rem;
         display: flex;
@@ -149,23 +164,48 @@ export default {
         justify-content: space-between;
         .check-content__top {
             display: flex;
-            justify-content: flex-end;
-            padding: 0.125rem 0.5rem;
-            border-bottom: 1px solid rgb(136, 136, 136);;
+            justify-content: space-between;
+            padding: 0.5rem;
+            border-radius: 0.125rem;
+            background: #363636;
+            border-bottom: 1px solid rgb(136, 136, 136);
             .check-content__top-button {
+                text-decoration: underline;
                 cursor: pointer;
                 &:hover {
                     color: rgb(136, 136, 136);
                 }
             }
         }
+        .check-content__main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #21201f;
+            height: 60vh;
+            width: 100%;
+        }
         .check-content__bottom {
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            .check-content__bottom-first {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 0 0.5rem 0;
+                .check-content__bottom-first-title {
+                    font-size: 0.875rem;
+                    color: #a7a7a7;
+                }
+                .check-content__bottom-first-data {
+                    font-size: 1.5rem;
+                }
+            }
             .check-content__bottom-input {
                 background: #21201f;
-                border-radius: 0.25rem;
+                border-radius: 0.125rem;
                 border: 1px solid #21201f;
                 color: white;
                 padding: 0.25rem 0.75rem;
@@ -175,6 +215,20 @@ export default {
                 margin-bottom: 1rem;
                 &:hover {
                     border: 1px solid white;
+                }
+            }
+            .check-content__bottom-second {
+                display: flex;
+                justify-content: flex-start;
+                .check-content__button {
+                    border-bottom: 1px dashed #a7a7a7;
+                    font-size: 0.875rem;
+                    color:#a7a7a7;
+                    cursor: pointer;
+                    margin-right: 1rem;
+                    &:hover {
+                        color: white;
+                    }
                 }
             }
         }

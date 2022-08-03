@@ -21,40 +21,59 @@
             </vs-col>
             <vs-col vs-w="9">
                 <div v-if="currentMenu === 1" class="login-edit__main-item">
-                    <label for="">Ник</label>
+                    <label class="login-edit__label" for="">Имя пользователя</label>
                     <input class="login-edit__input" type="text">
-                    <label for="">Email</label>
+                    <label class="login-edit__label" for="">Email</label>
                     <input class="login-edit__input" type="text">
-                    <label for="">Имя</label>
+                    <label class="login-edit__label" for="">Имя</label>
                     <input class="login-edit__input" type="text">
-                    <label for="">Фамилия</label>
+                    <label class="login-edit__label" for="">Фамилия</label>
                     <input class="login-edit__input" type="text">
-                    <label for="">Телефон</label>
+                    <label class="login-edit__label" for="">Номер телефон</label>
                     <input class="login-edit__input" type="text">
-                    <label for="">Дата рождения</label>
+                    <label class="login-edit__label" for="">Адрес</label>
                     <input class="login-edit__input" type="text">
-                    <label for=""></label>
+                    <label class="login-edit__label" for="">Пол</label>
                     <input class="login-edit__input" type="text">
+                    <label class="login-edit__label" for="">Дата рождения</label>
+                    <input class="login-edit__input" type="text">
+                    <button class="login-edit__button">
+                        Сохранить
+                    </button>
                 </div>
                 <div v-if="currentMenu === 2" class="login-edit__main-item">
-                    <label for="">Нынешний пароль</label>
+                    <label class="login-edit__label" for="">Текущий пароль</label>
                     <input class="login-edit__input" type="password">
-                    <label for="">Новый пароль</label>
+                    <label class="login-edit__label" for="">Новый пароль</label>
                     <input class="login-edit__input" type="password">
-                    <label for="">Повторите новый парль</label>
+                    <label class="login-edit__label" for="">Подтвердить новый пароль</label>
                     <input class="login-edit__input" type="password">
+                    <button class="login-edit__button">
+                        Сохранить
+                    </button>
                 </div>
                 <div v-if="currentMenu === 3" class="login-edit__main-item">
-                    <label for=""></label>
-                    <input class="login-edit__input" type="text">
-                    <label for=""></label>
-                    <input class="login-edit__input" type="text">
-                    <label for=""></label>
-                    <input class="login-edit__input" type="text">
-                    <label for=""></label>
-                    <input class="login-edit__input" type="text">
-                    <label for=""></label>
-                    <input class="login-edit__input" type="text">
+                    <div class="login-edit__list">
+                        <div class="login-edit__list-header">
+                            <span class="login-edit__list-header-first-item">Дата транзакции</span>
+                            <span class="login-edit__list-header-second-item">Описание</span>
+                            <span class="login-edit__list-header-third-item">Сумма Баланс, KZT</span>
+                        </div>
+                        <div v-for="(item, index) of transactions" :key="index" class="login-edit__list-item">
+                            <div class="login-edit__list-item-when">
+                                <span class="login-edit__list-item-time">{{ item.time }}</span>
+                                <span class="login-edit__list-item-date">{{ item.date }}</span>
+                            </div>
+                            <div class="login-edit__list-item-content">
+                                <span class="login-edit__list-item-descrition">{{ item.title }}</span>
+                                <span class="login-edit__list-item-tarif">{{ item.tarif }}</span>
+                            </div>
+                            <div class="login-edit__list-item-bottom">
+                                <span class="login-edit__list-item-cash-top">{{ item.ticket }}</span>
+                                <span class="login-edit__list-item-cash-bottom">{{ item.balans }}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </vs-col>
         </vs-row>
@@ -69,7 +88,7 @@ export default {
         return {
             menu: [
                 {
-                    title: 'Основные данные',
+                    title: 'Профиль',
                     type: 1
                 },
                 {
@@ -77,11 +96,53 @@ export default {
                     type: 2
                 },
                 {
-                    title: '3',
+                    title: 'История баланса',
                     type: 3
                 },
             ],
-            currentMenu: 1
+            currentMenu: 1,
+            transactions: [
+                {
+                    time: '20.15',
+                    date: '2.12.12',
+                    title: 'Сессия по тарифу',
+                    tarif: 'Тариф 600.00 KZT/час',
+                    ticket: '- 0.00',
+                    balans: '80.43'
+                },
+                {
+                    time: '20.15',
+                    date: '2.12.12',
+                    title: 'Сессия по тарифу',
+                    tarif: 'Тариф 600.00 KZT/час',
+                    ticket: '- 0.00',
+                    balans: '80.43'
+                },
+                {
+                    time: '20.15',
+                    date: '2.12.12',
+                    title: 'Сессия по тарифу',
+                    tarif: 'Тариф 600.00 KZT/час',
+                    ticket: '- 0.00',
+                    balans: '80.43'
+                },
+                {
+                    time: '20.15',
+                    date: '2.12.12',
+                    title: 'Сессия по тарифу',
+                    tarif: 'Тариф 600.00 KZT/час',
+                    ticket: '- 0.00',
+                    balans: '80.43'
+                },
+                {
+                    time: '20.15',
+                    date: '2.12.12',
+                    title: 'Сессия по тарифу',
+                    tarif: 'Тариф 600.00 KZT/час',
+                    ticket: '- 0.00',
+                    balans: '80.43'
+                },    
+            ]
         }
     },
 
@@ -109,18 +170,92 @@ export default {
         flex-direction: column;
         align-items: flex-start;
     }
+    .login-edit__label {
+        font-size: 0.875rem;
+        color: #a7a7a7;
+    }
     .login-edit__input {
         background: #21201f;
         border-radius: 0.25rem;
         border: 1px solid #21201f;
         color: white;
-        padding: 0.25rem 0.75rem;
+        padding: 0.5rem 0.75rem;
         font-size: 1.125rem;
         font-weight: 500;
-        width: 20rem;
+        width: 35rem;
         margin-bottom: 1rem;
         &:hover {
             border: 1px solid white;
+        }
+    }
+    .login-edit__button {
+        padding: 1rem 1.5rem;
+        background: #5a5a5a;
+        color: #a7a7a7;
+        border: none;
+        border-radius: 0.25rem;
+        margin-top: 3rem;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .login-edit__list {
+        width: 80%;
+        .login-edit__list-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            .login-edit__list-header-first-item {
+                font-size: 0.875rem;
+                color: #a7a7a7;
+            }
+            .login-edit__list-header-second-item {
+                font-size: 0.875rem;
+                color: #a7a7a7;
+            }
+            .login-edit__list-header-third-item {
+                font-size: 0.875rem;
+                color: #a7a7a7;
+            }
+        }
+        .login-edit__list-item {   
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #a7a7a7; 
+            padding: 1rem 0.5rem;
+            .login-edit__list-item-when {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .login-edit__list-item-time {
+
+                }
+                .login-edit__list-item-date {
+
+                }
+            }
+            .login-edit__list-item-content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .login-edit__list-item-descrition {
+
+                }
+                .login-edit__list-item-tarif {
+                    color: #a7a7a7;
+                }
+            }
+            .login-edit__list-item-bottom {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .login-edit__list-item-cash-top {
+                    color: red;
+                }
+                .login-edit__list-item-cash-bottom {
+
+                }
+            }
         }
     }
     .menu {
@@ -132,6 +267,7 @@ export default {
             display: inline-block;
             cursor: pointer;
             padding: 0.25rem;
+            padding-bottom: 1rem;
             min-width: 5rem;
             text-align: left;
             &:hover {

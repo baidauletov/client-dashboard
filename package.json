@@ -14,6 +14,7 @@
     "vue": "^2.7.8",
     "vue-agile": "^2.0.0",
     "vue-cookie": "^1.1.4",
+    "vue-slider-component": "^3.2.20",
     "vuesax": "^3.12.2"
   },
   "devDependencies": {

@@ -53,6 +53,7 @@ export default {
     border-radius: 0.25rem;
     min-height: 10rem;
     padding: 1rem;
+    cursor: pointer;
     .shop-card__product-title {
         display: inline-block;
         padding: 0 0 0.5rem;
@@ -78,7 +79,8 @@ export default {
         padding: 0 1rem;
         .shop-card__description {
             color: #868686;
-            text-align: left;        }
+            text-align: left;        
+        }
     }
 }
 </style>

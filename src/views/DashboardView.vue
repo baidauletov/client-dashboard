@@ -10,6 +10,23 @@
                         </span>
                     </div>
                 </div>
+                <div class="abonements__list">
+                    <div v-for="(item, index) of abonements" :key="index" class="abonements__item">
+                        <div class="abonements__item-time-wrapper">
+                            <span class="abonements__item-time-wrapper-top">{{ item.time }}</span>
+                            <span class="abonements__item-time-wrapper-bottom">{{ item.time2 }}</span>
+                        </div>
+                        <div class="abonements__item-center">
+                            <span class="abonements__item-center-title">Старт через чч:мм</span>
+                            <span class="abonements__item-center-start">{{ item.when }}</span>
+                        </div>
+                        <div class="abonements__item-button-wrapper">
+                            <button class="abonements__item-button">
+                                купить {{ item.cost }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </section>
         </vs-col>
         <vs-col vs-w="6" vs-sm="12" class="dashboard-view__item-wrapper">
@@ -172,6 +189,26 @@ export default {
                     image: defaultImage
                 }
             ],
+            abonements: [
+                {
+                    time: '2+1',
+                    time2: '3ч',
+                    when: 'Сейчас',
+                    cost: '1200 KZT'
+                },
+                {
+                    time: '2+1',
+                    time2: '3ч',
+                    when: 'Сейчас',
+                    cost: '1200 KZT'
+                },
+                {
+                    time: '2+1',
+                    time2: '3ч',
+                    when: 'Сейчас',
+                    cost: '1200 KZT'
+                }
+            ],
             news: [
                 {
                     image: '',
@@ -325,6 +362,52 @@ export default {
         .shop-content__item {
             cursor: pointer;
             padding: 0.5rem;
+        }
+    }
+    .abonements__list {
+        .abonements__item{
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid gray;
+            .abonements__item-time-wrapper {
+                display: flex;
+                flex-direction: column;
+                .abonements__item-time-wrapper-top {
+                    font-size: 1.125rem;
+                }
+                .abonements__item-time-wrapper-bottom {
+                    font-size: 2rem;
+                }
+            }
+            .abonements__item-center {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                .abonements__item-center-title {
+                    color: gray;
+                }
+                .abonements__item-center-start {
+                    color: greenyellow;
+                    font-size: 1.375rem;
+                }
+            }
+            .abonements__item-button-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                .abonements__item-button {
+                    color: white;
+                    background: #7136fa;
+                    border-radius: 0.25rem;
+                    padding: 0.75rem 1rem;
+                    text-transform: uppercase;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
         }
     }
 }

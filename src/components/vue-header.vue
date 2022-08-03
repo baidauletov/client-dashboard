@@ -195,7 +195,7 @@ export default {
         }
     }
     .header__menu-item {
-        font-size: 1.375rem;
+        font-size: 1.125rem;
         text-transform: uppercase;
         padding-right: 1.5rem;
         text-decoration: none;
@@ -221,7 +221,7 @@ export default {
         }
     }
     .status {
-        width: 20rem;
+        width: 20.5vw;
         border-left: 2px solid #5a5a5a;
         padding-left: 1rem;
     }
