@@ -60,6 +60,7 @@ const router = new Router({
                     path: '/login-edit',
                     name: 'LoginEdit',
                     component: () => import('./views/LoginEdit.vue'),
+                    props: route => ({ tab: route.query.tab })
                 },
                 {
                     path: '/files',

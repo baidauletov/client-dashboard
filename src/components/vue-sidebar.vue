@@ -72,7 +72,7 @@
         </div>
         <div class="sixth-block">
             <div class="sixth-block__left">
-                <router-link to="/login-edit">
+                <router-link to="/login-edit?tab=3">
                     <span class="sixth-block__left-title">
                         Последний заказ 
                         <iconArrowRight class="icon-arrow" />

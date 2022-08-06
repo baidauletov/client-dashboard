@@ -195,7 +195,8 @@ export default {
         }
     }
     .header__menu-item {
-        font-size: 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 600;
         text-transform: uppercase;
         padding-right: 1.5rem;
         text-decoration: none;
@@ -282,15 +283,20 @@ export default {
     .show-exit__title {
         font-size: 1.5rem;
         text-align: center;
+        padding-bottom: 1rem;
     }
     .show-exit__buttons {
         display: flex;
         justify-content: center;
+        padding-bottom: 2rem;
         .show-exit__button-item {
             padding: 0.5rem 1rem;
             border-radius: 0.25rem;
+            width: 9rem;
             background: #5a5a5a;
             color: white;
+            margin-right: 1rem;
+            margin-left: 1rem;
             &:hover {
                 opacity: 0.9;
                 color: #b5b2b2;

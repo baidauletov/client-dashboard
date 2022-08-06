@@ -22,7 +22,7 @@
                         </div>
                         <div class="abonements__item-button-wrapper">
                             <button class="abonements__item-button">
-                                купить {{ item.cost }}
+                                купить <span class="dot"></span> {{ item.cost }}
                             </button>
                         </div>
                     </div>
@@ -194,19 +194,19 @@ export default {
                     time: '2+1',
                     time2: '3ч',
                     when: 'Сейчас',
-                    cost: '1200 KZT'
+                    cost: '1,200 KZT'
                 },
                 {
-                    time: '2+1',
-                    time2: '3ч',
+                    time: '3+2',
+                    time2: '5ч',
                     when: 'Сейчас',
-                    cost: '1200 KZT'
+                    cost: '2,200 KZT'
                 },
                 {
-                    time: '2+1',
-                    time2: '3ч',
+                    time: '3+5',
+                    time2: '8ч',
                     when: 'Сейчас',
-                    cost: '1200 KZT'
+                    cost: '3,200 KZT'
                 }
             ],
             news: [
@@ -350,13 +350,16 @@ export default {
         }
     }
     .content__title {
-        font-size: 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 600;
         text-transform: uppercase;
     }
     .arrow-icon {
-        width: 3rem;
-        height: 1.25rem;
+        width: 1.25rem;
+        height: 0.875rem;
         fill: white;
+        bottom: 0.075rem;
+        position: relative;
     }
     .shop-content {
         .shop-content__item {
@@ -365,19 +368,28 @@ export default {
         }
     }
     .abonements__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .abonements__item{
             display: flex;
             justify-content: space-between;
-            padding: 1rem 2rem;
+            padding: 1.5rem 0;
+            width: 90%;
             border-bottom: 1px solid gray;
             .abonements__item-time-wrapper {
                 display: flex;
                 flex-direction: column;
+                align-items: flex-start;
                 .abonements__item-time-wrapper-top {
                     font-size: 1.125rem;
+                    font-weight: 600;
+                    padding-bottom: 0.5rem;
                 }
                 .abonements__item-time-wrapper-bottom {
-                    font-size: 2rem;
+                    font-size: 2.75rem;
+                    line-height: 2.75rem;
+                    font-weight: 600;
                 }
             }
             .abonements__item-center {
@@ -385,12 +397,15 @@ export default {
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-end;
+                margin-right: 3.5rem;
                 .abonements__item-center-title {
                     color: gray;
+                    font-size: 0.750rem;
                 }
                 .abonements__item-center-start {
-                    color: greenyellow;
-                    font-size: 1.375rem;
+                    color: #71ffa0;
+                    font-size: 1.125rem;
+                    font-weight: 600;
                 }
             }
             .abonements__item-button-wrapper {
@@ -401,14 +416,25 @@ export default {
                     color: white;
                     background: #7136fa;
                     border-radius: 0.25rem;
-                    padding: 0.75rem 1rem;
+                    padding: 0.5rem 0.5rem;
                     text-transform: uppercase;
+                    width: 17rem;
+                    font-weight: 600;
+                    font-size: 0.875rem;
                     &:hover {
-                        opacity: 0.8;
+                        opacity: 0.7;
                     }
                 }
             }
         }
+    }
+    .dot {
+        display: inline-block;
+        background: white;
+        border-radius: 50%;
+        width: 0.25rem;
+        height: 0.25rem;
+        vertical-align:middle
     }
 }
 </style>

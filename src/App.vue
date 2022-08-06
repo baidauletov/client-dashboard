@@ -76,11 +76,11 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
+  background-color: #31312f;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
+  background-color: #2e2e2d;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
